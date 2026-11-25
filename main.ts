@@ -6,10 +6,15 @@ const PUNCHLINE =
   "I built an agent to save time, and it turned me into its approval desk.";
 const OUTPUT_DIRECTORY = "/output";
 const ENTRY_FILENAME = "entry.txt";
+const SEPARATOR = " — ";
+
+function joinSegments(segments: string[]): string {
+  return segments.join(SEPARATOR);
+}
 
 function buildEntryText(setup: string, punchline: string): string {
   const segments = [setup, punchline];
-  return segments.join(" — ");
+  return joinSegments(segments);
 }
 
 function writeEntry(text: string): void {
